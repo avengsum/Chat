@@ -7,7 +7,7 @@ const Search = () => {
     return (
         <div>
             <div className="">
-                <input type="text" placeholder="Find a User"
+                <input type="text" placeholder="🔍 Search or start a new chat"
                 className="w-full p-1 border "
                 value={search}
                 onChange={(e) => setSearch(e.target.value) }

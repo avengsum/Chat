@@ -1,4 +1,5 @@
 import Search from "./Search"
+import User from "./User"
 
 const Nav = () => {
     return(
@@ -11,6 +12,11 @@ const Nav = () => {
             </div>
             </div>
             <Search />
+            <User />
+            <User />
+            <User />
+            <User />
+            <User />
             
         </div>
     )
