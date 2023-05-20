@@ -1,19 +1,21 @@
 import React, { useCallback, useState } from 'react';
 import { FaEnvelope, FaLock } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { useFormik } from 'formik';
+import { Field, useFormik } from 'formik';
 import * as Yup from 'yup'
 
 function Login() {
 
   const formik = useFormik({
     initialValues:{
+      name:'',
       email:'',
-      password:''
+      password:'',
+      file:null
     },
 
     validationSchema: Yup.object({
-      name:Yup.string().required('Required'),
+      name:Yup.string().required('Name is required'),
       email: Yup.string().email('Invalid email address').required('Required'),
       password: Yup.string().required('No password provided.') 
       .min(8, 'Password is too short - should be 8 chars minimum.')
@@ -31,6 +33,8 @@ function Login() {
   const varient = useCallback(() => {
     setTogle((current) => current === 'Register' ? 'Login' :'Register')
   })
+
+  console.log(formik.values)
 
 
 
@@ -108,6 +112,21 @@ function Login() {
                   {toggle === 'Register' ? 'Login' : 'Register'}
                 </p>
               </div>
+              { toggle === 'Register' && <div>
+           <label htmlFor="file" className="cursor-pointer bg-blue-500 text-white py-2 px-4 rounded-md">
+             Upload File
+             </label>
+              <input
+               type="file"
+               id="file"
+               name="file"
+               onChange={(e) => {
+               formik.setFieldValue('file', e.currentTarget.files[0]);
+               }}
+              className="hidden"
+              />
+             {formik.values.file && <span>{formik.values.file.name}</span>}
+            </div> }
             </div>
             <div>
               <button type="submit" 
