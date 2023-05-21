@@ -23,14 +23,22 @@ const Chat = () => {
         </div>
       </div>
 
-      <div className="mt-4 border border-gray-300 px-4 py-2 rounded-full w-full bg-white">
-        <button>😊</button>
-        <input
-          type="text"
-          placeholder="Type a message"
-          className="border border-gray-300 px-4 py-2 rounded-full w-full bg-white"
-          
-        />
+      <div className="mt-4 border border-gray-300 px-4 py-2 rounded-full w-full bg-white flex items-center">
+        <button className="text-2xl">😊</button>
+        <form className="flex flex-grow">
+          <input
+            type="text"
+            placeholder="Type a message"
+            className="border border-gray-300 px-4 py-2 rounded-full w-full bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button
+            type="submit"
+            className="ml-2 px-4 py-2 rounded-full bg-blue-500 text-white font-semibold hover:bg-blue-600"
+          >
+            Send
+          </button>
+        </form>
+        <button className="text-2xl">🔗</button>
       </div>
     </div>
   );
