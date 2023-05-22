@@ -2,11 +2,12 @@ import profile from '../assets/profile.png';
 import video from '../assets/video.png';
 import call from '../assets/call.png';
 import dot from '../assets/dot.jpg';
+import Message from './Message';
 
 const Chat = () => {
   return (
-    <div className="mt-10 ml-2 flex flex-col items-stretch h-28 w-2/3 bg-gray-100 border-t border-gray-300 p-2">
-      <div className="flex justify-between items-center h-full">
+    <div className="mt-10 ml-2 flex flex-col items-stretch h-[calc(100vh - 120px)] w-2/3 bg-gray-100 border-t border-gray-300 p-2">
+      <div className="flex items-start justify-between mb-4">
         <div className="flex items-center">
           <img
             src={profile}
@@ -23,7 +24,11 @@ const Chat = () => {
         </div>
       </div>
 
-      <div className="mt-4 border border-gray-300 px-4 py-2 rounded-full w-full bg-white flex items-center">
+      <div className="flex-grow">
+        <Message />
+      </div>
+
+      <div className="border border-gray-300 px-4 py-2 rounded-full bg-white flex items-center">
         <button className="text-2xl">😊</button>
         <form className="flex flex-grow">
           <input
