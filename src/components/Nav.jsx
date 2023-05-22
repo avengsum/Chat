@@ -13,10 +13,7 @@ const Nav = () => {
             </div>
             <Search />
             <User />
-            <User />
-            <User />
-            <User />
-            <User />
+            
             
         </div>
     )
